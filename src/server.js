@@ -38,6 +38,6 @@ const httpServer = http.createServer(app)
 server.installSubscriptionHandlers(httpServer)
 
 httpServer.listen({ port: PORT }, () => {
-	console.log('http://localhost:' + PORT + server.graphqlPath)
-	console.log('ws://localhost:' + PORT + server.subscriptionsPath)
+	console.log('https://localhost:' + PORT + server.graphqlPath)
+	console.log('wss://localhost:' + PORT + server.subscriptionsPath)
 })
