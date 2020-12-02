@@ -9,7 +9,7 @@ const USERS = `
 	FROM
 		users
 	WHERE
-		lower(user_username) = $1 and
+		lower(user_username) = lower($1) and
 		user_password = crypt($2, user_password)
 `
 
