@@ -17,6 +17,7 @@ app.use(cors())
 const modules = require('./modules')
 
 const server = new ApolloServer({
+	introspection: true,
 	modules,
 	context: ({ connection, req }) => {
 		return connection ? connection.context : {
@@ -38,6 +39,6 @@ const httpServer = http.createServer(app)
 server.installSubscriptionHandlers(httpServer)
 
 httpServer.listen({ port: PORT }, () => {
-	console.log('https://localhost:' + PORT + server.graphqlPath)
-	console.log('wss://localhost:' + PORT + server.subscriptionsPath)
+	console.log(server.url)
+	console.log(server.subscriptionsUrl)
 })

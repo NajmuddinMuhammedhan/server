@@ -67,3 +67,6 @@ create table results (
 	account_id int not null references accounts(account_id),
 	lecture_id int not null references lectures (lecture_id)
 );
+
+-- MOCK DATA
+insert into courses (course_name, course_description) values ('To''liq kurs', 'Dinimizni birgalikga o''rganamiz! Kurs yakunida sertifikat olasiz.');
